@@ -1,20 +1,53 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import React from 'react';
+import Header from './components/Header';
+import About from './components/About';
+import Services from './components/Services';
+import Team from './components/Team';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen flex flex-col">
-      <Navbar />
+    <div>
+      <Header />
 
-      <main className="flex-grow container mx-auto p-6 text-gray-900 dark:text-gray-100">
-        <h1 className="text-4xl font-bold mb-4">Welcome to My Site</h1>
-        <p className="text-lg">This is a starter template with dark/light mode and your logo colors.</p>
+      <main>
+        <section className="hero">
+          <div className="container hero-inner">
+            <div className="hero-text">
+              <h1>We make striking marketing, multimedia and web experiences</h1>
+              <p className="lead">Brand-first creative and dev services — websites, video, streaming, and performance marketing.</p>
+              <div className="hero-cta">
+                <a className="btn primary" href="#contact">Start a Project</a>
+                <a className="btn ghost" href="#services">View Services</a>
+              </div>
+            </div>
+
+            <div className="hero-media" aria-hidden="false">
+              <div className="media-card">
+                <img src="./assets/hero-thumb.jpg" alt="Example multimedia" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <About />
+        <Services />
+        <section id="work" className="work">
+          <div className="container">
+            <h2>Selected work</h2>
+            <div className="gallery">
+              <figure><img src="./assets/work1.jpg" alt="Project 1" /></figure>
+              <figure><img src="./assets/work2.jpg" alt="Project 2" /></figure>
+              <figure><img src="./assets/work3.jpg" alt="Project 3" /></figure>
+            </div>
+          </div>
+        </section>
+        <Team />
+        <Contact />
       </main>
 
       <Footer />
     </div>
   );
 }
-
-export default App;
-
